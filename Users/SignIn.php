@@ -7,7 +7,7 @@ if (isset($_POST['email']) && !empty($_POST['email'])
     $password = $_POST['password'];
 
     if (User::userLogin($email, $password)){
-        $user = new User($email);
+        $user = User::getByEmail($email);
         session_start();
         $_SESSION['userId'] = $user->Id;
         $_SESSION['roleId'] = $user->DescriptionId;

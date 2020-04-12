@@ -86,6 +86,26 @@ class User extends DB
         }
     }
 
+    public static function getByEmail($email)
+    {
+        $conn = new DB();
+        try {
+            $elements = array();
+            $stmt = $conn->connect()->prepare("SELECT * from users where Email=:email");
+            $stmt->execute(array(':email' => $email));
+
+            while ($element = $stmt->fetch()) {
+                array_push($elements, $element);
+            }
+            return $elements;
+
+        } catch (PDOException $e) {
+            echo "Error In Select: " . $e->getMessage();
+        } finally {
+            $conn->disconnect();
+        }
+    }
+
     //Operations
     public static function count()
     {
