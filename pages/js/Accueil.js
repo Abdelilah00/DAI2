@@ -36,6 +36,13 @@ document.getElementById('prenom').value = row.getElementsByTagName("td")[2].inne
 
 function Ajouter(){
     var p  =document.getElementById('CRUD');
+    document.getElementById('id').value = "";
+  document.getElementById('nom').value = "";
+  document.getElementById('prenom').value = "";
+   document.getElementById('profil').value ="";
+   document.getElementById('Filliere').value = "";
+     document.getElementById('email').value = "";
+   document.getElementById('tlfn').value = "";
     document.getElementById('CAjout').style.display="inline-block";
     document.getElementById('modifier').style.display="none";
     document.getElementById('supprimer').style.display="none";
