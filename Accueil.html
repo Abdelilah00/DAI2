@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+<link rel="stylesheet" href="Navbar.css">
+<link rel="stylesheet" href="Table.css">
+<link rel="stylesheet" href="Accueil.css">
+<script type="text/javascript" src="Login.js"></script>
+<script type="text/javascript" src="Accueil.js" ></script>
+  </head>
+  <body onload="addRowHandlers()">
+    <div class="topnav" id="myTopnav">
+      <a  class="active">Accueil</a>
+      <a href="#">Mes informations</a>
+</div>
+
+<table id="utilisateurs">
+
+<tr id="recherche">
+  <th></th>
+  <th><input type="text" placeholder="CNE our PRP" name="id" ></th>
+  <th><input type="text" placeholder="Nom" name="nom" ></th>
+  <th><input type="text" placeholder="Prenom" name="prenom" ></th>
+  <th><input type="text" placeholder="Description" name="desc" ></th>
+  <th><input type="text" placeholder="Email" name="email" ></th>
+  <th><input type="text" placeholder="Numéro de Téléphone" name="tlfn" ></th>
+</tr>
+<tr>
+
+<th>ID</th>
+<th>Nom</th>
+<th>Prenom</th>
+<th>Descritpion</th>
+<th>Filliere</th>
+<th>Email</th>
+<th>Téléphone</th>
+
+</tr>
+<tr>
+
+<td>H999999</td>
+<td>Abdelillah</td>
+<td>Dehaoui</td>
+<td>Etudiant</td>
+<td>Filliere</td>
+<td>Abdo@gmail.com</td>
+<td>06123456</td>
+</tr>
+<tr>
+<td>H8888</td>
+<td>Hafida</td>
+<td>Zrouri</td>
+<td>Enseignant(e)</td>
+<td>Filleire</td>
+<td>Zrouri@gmail.com</td>
+<td>06123456</td>
+</tr>
+</table>
+
+
+<div id="CRUD" class="Panneau">
+
+  <form class="contenu " action="#.php" method="post">
+
+    <div class="sousConteneur">
+      <label>  <b>Identifiant</b></label>
+      <input type="text" placeholder="CNE ou RPP " id="id" name="id" required>
+
+      <label>  <b>Email</b></label>
+      <input type="text" placeholder="Modifier Email" id="email" name="email" required>
+
+      <label for="nom"><b>Nom</b></label>
+      <input  type="text"placeholder="Modifier nom" id="nom" name="nom" required>
+
+      <label for="prenom"><b>Pr&eacute;nom</b></label>
+      <input  type="text"placeholder="Modifier prenom" id="prenom" name="prenom" required>
+
+      <label for="tlfn"><b>N° Téléphone</b></label>
+      <input type="text" placeholder="Modifier numéro de téléphone" id="tlfn" name="tlfn" required>
+
+
+      <label><b>Profil</b></label>
+      <select name="profil" id="profil" onchange="AfficherFilliere(this)">
+      <option value="Etudiant" selected>Etudiant</option>
+      <option value="Enseignant" >Enseignant(e)</option>
+      <option value="Fonctionnaire">Fonctionnaire</option>
+    </select><br>
+
+    <label ><b>Fillière</b></label>
+    <select name="Filliere" id="Filliere" >
+    </select><br>
+
+    <button type="submit" style="margin-left:10%;">Modifier</button>
+    <button type="button"style="background-color: #333">Supprimer</button>
+
+    </div>
+
+    <div class="sousConteneur" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('CRUD').style.display='none';" class="annuler">Annuler</button>
+    </div>
+  </form>
+</div>
+
+  </body>
+</html>
