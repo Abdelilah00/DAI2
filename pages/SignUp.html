@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+<link rel="stylesheet" href="css/Navbar.css">
+<link rel="stylesheet" href="css/SignIn.css">
+<script type="text/javascript" src="js/SignIn.js">
+
+</script>
+  </head>
+  <body onload="resetFilliere()">
+    <div class="topnav" id="myTopnav">
+      <a  class="active">Accueil</a>
+
+</div>
+
+
+<div class="conteneur">
+
+  <form class="contenu" action="../Users/SignUp.php" method="post">
+    <div class="conteneurImg">
+      <img src="src/ESTO.svg" alt="Bienvenue!" class="logo">
+    </div>
+
+    <div class="sousConteneur">
+      <label>  <b>Identifiant</b></label>
+      <input type="text" placeholder="CNE ou RPP " name="uid" required>
+
+      <label>  <b>Email</b></label>
+      <input type="text" placeholder="Veuillez saisir votre Email" name="email" required>
+
+      <label for="nom"><b>Nom</b></label>
+      <input type="password" placeholder="Veuillez saisir votre nom" name="nom" required>
+
+      <label for="prenom"><b>Pr&eacute;nom</b></label>
+      <input type="password" placeholder="Veuillez saisir votre prenom" name="prenom" required>
+
+      <label for="tlfn"><b>N° Téléphone</b></label>
+      <input type="password" placeholder="Veuillez saisir votre numéro de téléphone" name="tlfn" required>
+
+
+      <label><b>Précisez votre profil</b></label>
+      <select name="profil" id="profil" onchange="AfficherFilliere(this)">
+      <option value="Etudiant" selected>Etudiant</option>
+      <option value="Enseignant" >Enseignant</option>
+      <option value="Fonctionnaire">Fonctionnaire</option>
+    </select><br>
+
+        <label for="Filliere"><b>Fillière</b></label>
+    <select name="Filliere" id="Filliere">
+    </select><br>
+
+      <label for="psw"><b>Saisir mot de passe</b></label>
+      <input type="password" placeholder="Veuillez saisir votre mot de passe" name="psw" required>
+
+      <label for="cpsw"><b>Confirmer mot de passe</b></label>
+      <input type="password" placeholder="Veuillez confirmer votre mot de passe" name="cpsw" required>
+
+      <button type="submit">Inscription</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Se rappeler de moi
+      </label>
+    </div>
+
+    <div class="sousConteneur" style="background-color:#f1f1f1; height: 20px; ">
+      <span class="psw">Vous avez déja un compte? <a href="SignIn.html">Connectez-vous</a></span>
+    </div>
+  </form>
+</div>
+  </body>
+</html>
