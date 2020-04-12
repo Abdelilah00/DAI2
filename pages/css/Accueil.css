@@ -7,6 +7,16 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
+#ajouter{
+  float: right;
+  margin-right: 10%;
+    margin-top: 10%;
+    width: 10%;
+}
+
+#CAjout{
+  margin-left: 30%;
+}
 button {
   background-color: #4CAF50;
   color: white;
