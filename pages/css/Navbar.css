@@ -22,7 +22,9 @@ html, body {
     background-color: #2196F3;
     color: white;
 }
-
+#deconnexion{
+  float: right;
+}
 .topnav .icon {
     display: none;
 }
