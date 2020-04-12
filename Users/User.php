@@ -1,5 +1,5 @@
 <?php
-include_once '../DB.php';
+include_once './config/DB.php';
 
 class User extends DB
 {
