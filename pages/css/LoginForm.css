@@ -1,4 +1,4 @@
-input[type=text], input[type=password] {
+input[type=text], input[type=password], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -7,58 +7,60 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-#ajouter{
-  float: right;
-  margin-right: 10%;
-    margin-top: 10%;
-    width: 10%;
-}
 
-#CAjout{
-  margin-left: 30%;
-}
 button {
-  background-color: #4CAF50;
+  background-color: #2196F3;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 40%;
+  width: 100%;
 }
 
 button:hover {
   opacity: 0.8;
 }
 
-.annuler {
+.cancelbtn {
   width: auto;
   padding: 10px 18px;
-  background-color: #f44336;
+  background-color: #333;
+}
+.conteneurImg {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
 }
 
+img.logo {
+  width: 40%;
+  border-radius: 50%;
+}
 
 .sousConteneur {
   padding: 16px;
+
 }
 
 span.psw {
   float: right;
-  padding-top: 16px;
+
 }
 
 
-.Panneau {
-  display: none;
+.conteneur {
+  display: block;
   position: fixed;
   left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: #f5f6fa;
+
   padding-top: 60px;
+
+
 }
 
 .contenu {
