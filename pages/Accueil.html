@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-<link rel="stylesheet" href="Navbar.css">
-<link rel="stylesheet" href="Table.css">
-<link rel="stylesheet" href="Accueil.css">
-<script type="text/javascript" src="Login.js"></script>
-<script type="text/javascript" src="Accueil.js" ></script>
+<link rel="stylesheet" href="css/Navbar.css">
+<link rel="stylesheet" href="css/Table.css">
+<link rel="stylesheet" href="css/Accueil.css">
+<script type="text/javascript" src="js/Login.js"></script>
+<script type="text/javascript" src="js/Accueil.js" ></script>
   </head>
   <body onload="addRowHandlers()">
     <div class="topnav" id="myTopnav">
       <a  class="active">Accueil</a>
-      <a href="#">Mes informations</a>
+      <a href="Profile.html">Mon profile</a>
+      <a id="deconnexion">D&eacute;connexion</a>
 </div>
 <button type="button" id="ajouter" onclick="Ajouter()">Ajouter</button>
 <table id="utilisateurs">
