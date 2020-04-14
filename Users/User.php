@@ -19,7 +19,7 @@ class User extends DB
         $this->Id = $Id;
 
         try {
-            $stmt = $this->connect()->prepare("SELECT * from users u,filieres f,descriptions d where Id = :id and u.FiliereId=f.Id and u.DescriptionId=d.Id");
+            $stmt = $this->connect()->prepare("SELECT * from users u,filieres f,descriptions d where u.Id = :id and u.FiliereId=f.Id and u.DescriptionId=d.Id");
             $stmt->execute(array(':id' => $this->Id));
 
             if ($stmt->rowCount() != 1 && $this->Id != null)
@@ -33,7 +33,7 @@ class User extends DB
             $this->NumDeTele = $element['NumDeTele'];
             $this->Email = $element['Email'];
             $this->DescriptionId = $element['DescriptionId'];
-            $this->DescriptionNom = $element['DescriptionNom'];
+            $this->DescriptionNom = $element['Role'];
             $this->FiliereId = $element['FiliereId'];
             $this->FiliereNom = $element['FiliereNom'];
 

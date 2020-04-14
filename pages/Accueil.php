@@ -12,7 +12,7 @@
 <body onload="addRowHandlers()">
 <div class="topnav" id="myTopnav">
     <a class="active">Accueil</a>
-    <a href="Profile.html">Mon profile</a>
+    <a href="Profile.php">Mon profile</a>
     <a id="deconnexion" href="SignIn.php">D&eacute;connexion</a>
 </div>
 <button type="button" id="ajouter" onclick="Ajouter()">Ajouter</button>
