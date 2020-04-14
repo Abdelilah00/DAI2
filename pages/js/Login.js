@@ -1,14 +1,8 @@
-function AfficherFilliere(element)
-{
-
-    document.getElementById("FilliereDiv").style.display = element.value == "Etudiant" ? 'block' : 'none';
-
-
+function AfficherFilliere(element) {
+    document.getElementById("FilliereDiv").style.display = element.options[element.selectedIndex].text === "Etudiant" ? 'block' : 'none';
 }
 
-
-function resetFilliere(){
-  var s = document.getElementById("profil");
-  s.selectedIndex = s.options[0];
-
+function resetFilliere() {
+    var s = document.getElementById("profil");
+    s.selectedIndex = s.options[0];
 }

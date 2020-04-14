@@ -15,8 +15,7 @@ if (isset($_POST['id']) && !empty($_POST['id'])
         header('location: errors=userExist');
 
 
-    $user = new User(null);
-    $user->Id = $_POST['id'];
+    $user = new User($_POST['id']);
     $user->Password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $user->Nom = $_POST['nom'];
     $user->Prenom = $_POST['prenom'];
@@ -24,7 +23,7 @@ if (isset($_POST['id']) && !empty($_POST['id'])
     $user->Email = $_POST['email'];
     $user->DescriptionId = $_POST['descriptionId'];
     $user->FiliereId = $_POST['filiereId'];
-    $user->add();
+    $user->update();
 
     session_start();
     $_SESSION['userId'] = $user->Id;

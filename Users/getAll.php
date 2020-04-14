@@ -1,8 +1,6 @@
 <?php
 include_once "User.php";
-$users = User::getBy($_GET['search']);
-//Test If Admin Or not
-//If Student Or Not
+$users = User::getAll();
 foreach ($users as $user) {
     echo "<tr>
                 <td>" . $user['Id'] . "</td>
