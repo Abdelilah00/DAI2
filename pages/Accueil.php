@@ -41,10 +41,10 @@
     <form class="contenu " action="#.php" method="post">
 
         <div class="sousConteneur">
-            <label> <b>Identifiant</b></label>
+            <label for="id"> <b>Identifiant</b></label>
             <input type="text" placeholder="CNE ou RPP " id="id" name="id" required>
 
-            <label> <b>Email</b></label>
+            <label for="email"> <b>Email</b></label>
             <input type="text" placeholder="Modifier Email" id="email" name="email" required>
 
             <label for="nom"><b>Nom</b></label>
@@ -57,14 +57,14 @@
             <input type="text" placeholder="Modifier numéro de téléphone" id="tlfn" name="tlfn" required>
 
 
-            <label><b>Profil</b></label>
+            <label for="profil"><b>Profil</b></label>
             <select name="profil" id="profil" onchange="AfficherFilliere(this)">
                 <option value="Etudiant" selected>Etudiant</option>
                 <option value="Enseignant">Enseignant(e)</option>
                 <option value="Fonctionnaire">Fonctionnaire</option>
             </select><br>
 
-            <label><b>Fillière</b></label>
+            <label for="Filliere"><b>Fillière</b></label>
             <select name="Filliere" id="Filliere">
             </select><br>
 

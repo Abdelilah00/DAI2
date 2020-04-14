@@ -19,8 +19,8 @@
         <?php
         if (isset($_GET["errors"]))
             echo "      <div id='errors'>
-                            <p style='margin: auto'>
-                                User Not Exist
+                            <p id='msgErreur'>
+                                Informations incorrectes
                             </p>
             </div>";
         ?>
@@ -30,15 +30,15 @@
         </div>
 
         <div class="sousConteneur">
-            <label> <b>Email</b></label>
-            <input name="email" placeholder="Veuillez saisir otre Email" required type="text">
+            <label for="email"> <b>Email</b></label>
+            <input id="email"name="email" placeholder="Veuillez saisir otre Email" required type="text">
 
-            <label><b>Mot de passe</b></label>
-            <input name="password" placeholder="Veuillez sasir votre mot de passe" required type="password">
+            <label for="mdp"><b>Mot de passe</b></label>
+            <input id="mdp"name="password" placeholder="Veuillez sasir votre mot de passe" required type="password">
 
             <button type="submit">Se connecter</button>
             <label>
-                <input checked="checked" name="remember" type="checkbox"> Se rappeler de moi
+                <input checked="checked" name="remember" type="checkbox" > Se rappeler de moi
             </label>
         </div>
 

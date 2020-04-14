@@ -19,7 +19,7 @@
 
 <div class="conteneur">
 
-    <form class="contenu" method="post" action="../Users/SignUp.php">
+    <form class="contenu" method="post" onsubmit="return mdpIdentiques(this)" action="../Users/SignUp.php">
         <div class="conteneurImg">
             <img alt="Bienvenue!" class="logo" src="src/ESTO.svg">
         </div>
@@ -27,46 +27,46 @@
         <?php
         if (isset($_GET["errors"]))
             echo "      <div id='errors' >
-                    <p style='margin: auto'>
-                        User already exist
+                    <p  id='msgErreur'>
+                        Utilisateur existant
                     </p>
             </div>";
         ?>
 
         <div class="sousConteneur">
-            <label> <b>Identifiant</b></label>
-            <input type="text" placeholder="CNE ou RPP " name="id" required>
+            <label for="id"> <b>Identifiant</b></label>
+            <input id="id" type="text" placeholder="CNE ou RPP " name="id" required>
 
-            <label> <b>Email</b></label>
-            <input type="text" placeholder="Veuillez saisir votre Email" name="email" required>
+            <label for="email"> <b>Email</b></label>
+            <input id="email" type="text" placeholder="Veuillez saisir votre Email" name="email" required>
 
-            <label><b>Nom</b></label>
-            <input type="text" placeholder="Veuillez saisir votre nom" name="nom" required>
+            <label for="nom" ><b>Nom</b></label>
+            <input id="nom"type="text" placeholder="Veuillez saisir votre nom" name="nom" required>
 
-            <label><b>Pr&eacute;nom</b></label>
-            <input type="text" placeholder="Veuillez saisir votre prenom" name="prenom" required>
+            <label for="prenom"><b>Pr&eacute;nom</b></label>
+            <input id="prenom" type="text" placeholder="Veuillez saisir votre prenom" name="prenom" required>
 
-            <label><b>N° Téléphone</b></label>
-            <input type="text" placeholder="Veuillez saisir votre numéro de téléphone" name="numDeTele" required>
+            <label for="tlfn"><b>N° Téléphone</b></label>
+            <input id="tlfn"type="text" placeholder="Veuillez saisir votre numéro de téléphone" name="numDeTele" required>
 
 
-            <label><b>Précisez votre profil</b></label>
+            <label for="profil"><b>Précisez votre profil</b></label>
             <select name="descriptionId" id="profil" onchange="AfficherFilliere(this)">
                 <?php include_once('../Descriptions/getAllForList.php') ?>
             </select><br>
             <div id="FilliereDiv">
-                <label><b>Fillière</b></label>
+                <label for="Filliere"><b>Fillière</b></label>
                 <select name="filiereId" id="Filliere">
                     <?php include_once('../Filieres/getAllForList.php') ?>
                 </select>
             </div>
 
 
-            <label><b>Saisir mot de passe</b></label>
-            <input type="password" placeholder="Veuillez saisir votre mot de passe" name="password" required>
+            <label for="mdp"><b>Saisir mot de passe</b></label>
+            <input id="mdp" type="password" placeholder="Veuillez saisir votre mot de passe" name="mdp" required>
 
-            <label><b>Confirmer mot de passe</b></label>
-            <input type="password" placeholder="Veuillez confirmer votre mot de passe" name="cpsw" required>
+            <label for="cmdp"><b>Confirmer mot de passe</b></label>
+            <input id="cmdp" type="password" placeholder="Veuillez confirmer votre mot de passe" name="cmdp" required>
 
             <button type="submit">Inscription</button>
             <label>
