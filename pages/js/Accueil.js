@@ -1,5 +1,5 @@
 
-function addRowHandlers() {
+function ajoutEvenementPourLignesDuTableau() {
     var table = document.getElementById("utilisateurs");
     var rows = table.getElementsByTagName("tr");
     for (i = 0; i < rows.length; i++) {
