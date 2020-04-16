@@ -9,18 +9,20 @@
     <script type="text/javascript" src="js/Login.js"></script>
     <script type="text/javascript" src="js/Accueil.js"></script>
 </head>
-<body onload="addRowHandlers()">
+<body onload="ajoutEvenementPourLignesDuTableau()">
 <div class="topnav" id="myTopnav">
     <a class="active">Accueil</a>
     <a href="Profile.php">Mon profile</a>
     <a id="deconnexion" href="SignIn.php">D&eacute;connexion</a>
 </div>
-<button type="button" id="ajouter" onclick="Ajouter()">Ajouter</button>
-<form action="../Users/Search.php" method="get">
+
+<form id="recherche" action="../Users/Search.php" method="get">
     <label>
-        <input type="text" placeholder="Search KeyWord" name="id">
+        <input id="inputRecherche"  type="text" placeholder="Mot clé à rechercher" name="id">
     </label>
-    <button type="submit">Search</button>
+    <button id="btnRecherche" type="submit">Chercher</button>
+    <button type="button" id="ajouter" onclick="Ajouter()">Ajouter</button>
+
 </form>
 <table id="utilisateurs">
     <tr>
