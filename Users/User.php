@@ -19,7 +19,7 @@ class User extends DB
         $this->Id = $Id;
 
         try {
-            $stmt = $this->connect()->prepare("SELECT * from users u,filieres f,descriptions d where u.Id = :id and u.FiliereId=f.Id and u.DescriptionId=d.Id");
+            $stmt = $this->connect()->prepare("SELECT * from users u inner join descriptions d on u.DescriptionId = d.Id left join filieres f on u.FiliereId = f.Id where u.Id=:id");
             $stmt->execute(array(':id' => $this->Id));
 
             if ($stmt->rowCount() != 1 && $this->Id != null)
@@ -51,7 +51,7 @@ class User extends DB
         $conn = new DB();
         try {
             $elements = array();
-            $stmt = $conn->connect()->prepare("SELECT * from users");
+            $stmt = $conn->connect()->prepare("SELECT u.id, password, nom, prenom, numDeTele, email, descriptionid, filiereid, filiereNom, role from users u inner join descriptions d on u.DescriptionId = d.Id left join filieres f on u.FiliereId = f.Id");
             $stmt->execute();
 
             while ($element = $stmt->fetch()) {
@@ -97,7 +97,7 @@ class User extends DB
             while ($element = $stmt->fetch()) {
                 array_push($elements, $element);
             }
-            return $elements;
+            return $elements[0];
 
         } catch (PDOException $e) {
             echo "Error In Select: " . $e->getMessage();
@@ -138,6 +138,7 @@ class User extends DB
             $conn->disconnect();
         }
     }
+
     public static function userLogin($email, $Pass)
     {
         $conn = new db();
@@ -171,8 +172,8 @@ class User extends DB
     public function update()
     {
         try {
-            $stmt = $this->connect()->prepare("update User set user= :user, date_debut=:date_debut, date_fin=:date_fin where code = :code");
-            $stmt->execute(array(':code' => $this->code, ':user' => $this->user, ':date_debut' => $this->date_debut, ':date_fin' => $this->date_fin));
+            $stmt = $this->connect()->prepare("update users set  where code = :code");
+            $stmt->execute(array(':code' => $this->code,));
 
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
@@ -184,8 +185,8 @@ class User extends DB
     public function delete()
     {
         try {
-            $stmt = $this->connect()->prepare("delete from User where Id = :id");
-            $stmt->execute(array(':id' => $this->id));
+            $stmt = $this->connect()->prepare("delete from users where Id = :id");
+            $stmt->execute(array(':id' => $this->Id));
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         } finally {

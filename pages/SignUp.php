@@ -19,7 +19,7 @@
 
 <div class="conteneur">
 
-    <form class="contenu" method="post" onsubmit="return mdpIdentiques(this)" action="../Users/SignUp.php">
+    <form class="contenu" method="post" onsubmit="return mdpIdentiques(this)" action="../Users/Create.php">
         <div class="conteneurImg">
             <img alt="Bienvenue!" class="logo" src="src/ESTO.svg">
         </div>

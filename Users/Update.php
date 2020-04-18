@@ -1,13 +1,13 @@
 <?php
 
 if (isset($_POST['id']) && !empty($_POST['id'])
-    && isset($_POST['password']) && !empty($_POST['password'])
+    /*    && isset($_POST['password']) && !empty($_POST['password'])*/
     && isset($_POST['nom']) && !empty($_POST['nom'])
     && isset($_POST['prenom']) && !empty($_POST['prenom'])
     && isset($_POST['numDeTele']) && !empty($_POST['numDeTele'])
     && isset($_POST['email']) && !empty($_POST['email'])
     && isset($_POST['descriptionId']) && !empty($_POST['descriptionId'])
-    && isset($_POST['filiereId']) && !empty($_POST['filiereId'])
+    /*    && isset($_POST['filiereId']) && !empty($_POST['filiereId'])*/
 ) {
 
     include_once "User.php";

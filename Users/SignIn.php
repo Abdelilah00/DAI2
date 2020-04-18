@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_POST['email']) && !empty($_POST['email'])
     && isset($_POST['password']) && !empty($_POST['password'])) {
 
@@ -6,13 +7,13 @@ if (isset($_POST['email']) && !empty($_POST['email'])
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if (User::userLogin($email, $password)){
+    if (User::userLogin($email, $password)) {
         $user = User::getByEmail($email);
         session_start();
-        $_SESSION['userId'] = $user->Id;
-        $_SESSION['roleId'] = $user->DescriptionId;
+        $_SESSION['userId'] = $user['Id'];
+        $_SESSION['roleId'] = $user['DescriptionId'];
         header('location: ../pages/Accueil.php');
-    }else
+    } else
         header('location: ../pages/SignIn.php?errors=UserNotExist');
 } else {
     echo "error request parameters";

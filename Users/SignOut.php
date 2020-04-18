@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+session_destroy();
 setcookie("userId", '', -1);
 setcookie("roleId", '', -1);
-session_destroy();
+header('location: ../pages/SignIn.php');

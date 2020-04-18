@@ -1,3 +1,4 @@
+<?php include_once('../Users/IsSignedIn.php') ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -13,12 +14,12 @@
 <div class="topnav" id="myTopnav">
     <a class="active">Accueil</a>
     <a href="Profile.php">Mon profile</a>
-    <a id="deconnexion" href="SignIn.php">D&eacute;connexion</a>
+    <a id="deconnexion" href="../Users/SignOut.php">D&eacute;connexion</a>
 </div>
 
 <form id="recherche" action="../Users/Search.php" method="get">
     <label>
-        <input id="inputRecherche"  type="text" placeholder="Mot clé à rechercher" name="id">
+        <input id="inputRecherche" type="text" placeholder="Mot clé à rechercher" name="id">
     </label>
     <button id="btnRecherche" type="submit">Chercher</button>
     <button type="button" id="ajouter" onclick="Ajouter()">Ajouter</button>
@@ -40,7 +41,7 @@
 
 <div id="CRUD" class="Panneau">
 
-    <form class="contenu " action="#.php" method="post">
+    <form class="contenu " action="../Users/Edite.php" method="post">
 
         <div class="sousConteneur">
             <label for="id"> <b>Identifiant</b></label>
@@ -56,24 +57,25 @@
             <input type="text" placeholder="Modifier prenom" id="prenom" name="prenom" required>
 
             <label for="tlfn"><b>N° Téléphone</b></label>
-            <input type="text" placeholder="Modifier numéro de téléphone" id="tlfn" name="tlfn" required>
+            <input type="text" placeholder="Modifier numéro de téléphone" id="tlfn" name="numDeTele" required>
 
 
             <label for="profil"><b>Profil</b></label>
-            <select name="profil" id="profil" onchange="AfficherFilliere(this)">
-                <option value="Etudiant" selected>Etudiant</option>
-                <option value="Enseignant">Enseignant(e)</option>
-                <option value="Fonctionnaire">Fonctionnaire</option>
+            <select name="descriptionId" id="profil" onchange="AfficherFilliere(this)">
+                <?php include_once('../Descriptions/getAllForList.php') ?>
             </select><br>
 
-            <label for="Filliere"><b>Fillière</b></label>
-            <select name="Filliere" id="Filliere">
-            </select><br>
+            <div id="FilliereDiv">
+                <label for="Filliere"><b>Fillière</b></label>
+                <select name="filiereId" id="Filliere">
+                    <?php include_once('../Filieres/getAllForList.php') ?>
+                </select><br>
+            </div>
 
-            <button id="modifier" type="submit" style="margin-left:10%;">Modifier</button>
-            <button id="CAjout" type="submit">Ajouter</button>
-            <button id="supprimer" type="button" style="background-color: #333">Supprimer</button>
-
+            <button id="CAjout" type="submit" value="create" name="action">Ajouter</button>
+            <button id="modifier" type="submit" value="update" name="action" style="margin-left:10%;">Modifier</button>
+            <button id="supprimer" type="submit" value="delete" name="action" style="background-color: #333">Supprimer
+            </button>
         </div>
 
         <div class="sousConteneur" style="background-color:#f1f1f1">
