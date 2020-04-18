@@ -8,9 +8,9 @@ input[type=text], input[type=password] {
 }
 
 #ajouter{
-  float: right;
 
     width: 10%;
+    margin-top: 20px;
 }
 
 #CAjout{
@@ -38,7 +38,7 @@ button:hover {
 }
 
 #btnRecherche{
-  width: 10%;
+  width: 11%;
 
   height: 42px;
   margin-left: 0px;
@@ -48,8 +48,9 @@ button:hover {
 #recherche{
   margin-top: 20px;
   display: inline-block;
-  width: 80%;
+  width: 60%;
   margin-left: 10%;
+  margin-right: 9.5%;
 }
 
 
