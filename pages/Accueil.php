@@ -9,18 +9,20 @@
     <script type="text/javascript" src="js/Login.js"></script>
     <script type="text/javascript" src="js/Accueil.js"></script>
 </head>
-<body onload="addRowHandlers()">
+<body onload="ajoutEvenementPourLignesDuTableau()">
 <div class="topnav" id="myTopnav">
     <a class="active">Accueil</a>
     <a href="Profile.php">Mon profile</a>
     <a id="deconnexion" href="SignIn.php">D&eacute;connexion</a>
 </div>
-<button type="button" id="ajouter" onclick="Ajouter()">Ajouter</button>
-<form action="../Users/Search.php" method="get">
+
+<form id="recherche" action="../Users/Search.php" method="get">
     <label>
-        <input type="text" placeholder="Search KeyWord" name="id">
+        <input id="inputRecherche"  type="text" placeholder="Mot clé à rechercher" name="id">
     </label>
-    <button type="submit">Search</button>
+    <button id="btnRecherche" type="submit">Chercher</button>
+    <button type="button" id="ajouter" onclick="Ajouter()">Ajouter</button>
+
 </form>
 <table id="utilisateurs">
     <tr>
@@ -41,10 +43,10 @@
     <form class="contenu " action="#.php" method="post">
 
         <div class="sousConteneur">
-            <label> <b>Identifiant</b></label>
+            <label for="id"> <b>Identifiant</b></label>
             <input type="text" placeholder="CNE ou RPP " id="id" name="id" required>
 
-            <label> <b>Email</b></label>
+            <label for="email"> <b>Email</b></label>
             <input type="text" placeholder="Modifier Email" id="email" name="email" required>
 
             <label for="nom"><b>Nom</b></label>
@@ -57,14 +59,14 @@
             <input type="text" placeholder="Modifier numéro de téléphone" id="tlfn" name="tlfn" required>
 
 
-            <label><b>Profil</b></label>
+            <label for="profil"><b>Profil</b></label>
             <select name="profil" id="profil" onchange="AfficherFilliere(this)">
                 <option value="Etudiant" selected>Etudiant</option>
                 <option value="Enseignant">Enseignant(e)</option>
                 <option value="Fonctionnaire">Fonctionnaire</option>
             </select><br>
 
-            <label><b>Fillière</b></label>
+            <label for="Filliere"><b>Fillière</b></label>
             <select name="Filliere" id="Filliere">
             </select><br>
 

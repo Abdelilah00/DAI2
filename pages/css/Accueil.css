@@ -9,14 +9,15 @@ input[type=text], input[type=password] {
 
 #ajouter{
   float: right;
-  margin-right: 10%;
-    margin-top: 10%;
+
     width: 10%;
 }
 
 #CAjout{
   margin-left: 30%;
 }
+
+
 button {
   background-color: #4CAF50;
   color: white;
@@ -30,6 +31,27 @@ button {
 button:hover {
   opacity: 0.8;
 }
+
+#inputRecherche{
+  width: 70%;
+
+}
+
+#btnRecherche{
+  width: 10%;
+
+  height: 42px;
+  margin-left: 0px;
+
+}
+
+#recherche{
+  margin-top: 20px;
+  display: inline-block;
+  width: 80%;
+  margin-left: 10%;
+}
+
 
 .annuler {
   width: auto;

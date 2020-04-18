@@ -24,31 +24,31 @@
             $user = new User($_SESSION['userId']);
 
             echo "<h1>Informations personnelles</h1>
-            <label> Identifiant</label>
+            <label for='idText'> Identifiant</label>
             <h4 id='idText'>" . $user->Id . "</h4>
             <hr>
 
-            <label> Nom</label>
+            <label for='nomText'> Nom</label>
             <h4 id='nomText'>" . $user->Nom . "</h4>
             <hr>
 
-            <label>Pr&eacute;nom</label>
+            <label for='PrenomText'>Pr&eacute;nom</label>
             <h4 id='PrenomText'>" . $user->Prenom . "</h4>
             <hr>
 
-            <label>Profil</label>
-            <h4 id=profilLabel'>" . $user->DescriptionNom . "</h4>
+            <label for='profilLabel'>Profil</label>
+            <h4 id='profilLabel'>" . $user->DescriptionNom . "</h4>
             <hr>
 
-            <label>Fillière</label>
+            <label for='filliereLabel'>Fillière</label>
             <h4 id='filliereLabel'>" . $user->FiliereNom . "</h4>
             <hr>
 
-            <label>Email</label>
+            <label for='emailLabel'>Email</label>
             <h4 id='emailLabel'>" . $user->Email . "</h4>
             <hr>
 
-            <label>N° Téléphone</label>
+            <label for='tlfnLabel'>N° Téléphone</label>
             <h4 id='tlfnLabel'>" . $user->NumDeTele . "</h4>
             <hr>";
             ?>
@@ -74,7 +74,7 @@
             echo "<label> <b>Identifiant</b></label>
             <input type='text' placeholder='CNE ou RPP ' id='id' name='id' required>
 
-            <label> <b>Email</b></label>
+            <label for='email'> <b>Email</b></label>
             <input type='text' placeholder='Modifier Email' id='email' name='email' required>
 
             <label for='nom'><b>Nom</b></label>
@@ -87,12 +87,12 @@
             <input type='text' placeholder='Modifier numéro de téléphone' id='tlfn' name='numdeTele' required>
 
 
-            <label><b>Profil</b></label>
+            <label for='profil'><b>Profil</b></label>
             <select name='descriptionId' id='profil' onchange='AfficherFilliere(this)'>
                 " . xx . "
             </select><br>
 
-            <label><b>Fillière</b></label>
+            <label for='Filliere'><b>Fillière</b></label>
             <select name='filliereId' id='Filliere'>
                 " . xx . "
             </select><br>
