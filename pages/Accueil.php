@@ -22,9 +22,10 @@
         <input id="inputRecherche" type="text" placeholder="Mot clé à rechercher" name="id">
     </label>
     <button id="btnRecherche" type="submit">Chercher</button>
-    <button type="button" id="ajouter" onclick="Ajouter()">Ajouter</button>
+
 
 </form>
+    <button type="button" id="ajouter" onclick="Ajouter()">Ajouter</button>
 <table id="utilisateurs">
     <tr>
         <th>ID</th>
