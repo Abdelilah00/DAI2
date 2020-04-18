@@ -1,3 +1,4 @@
+<?php include_once('../Users/IsSignedIn.php') ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -88,12 +89,12 @@
 
             <label><b>Profil</b></label>
             <select name='descriptionId' id='profil' onchange='AfficherFilliere(this)'>
-                " . include_once ('../Descriptions/getAllForList.php') . "
+                " . xx . "
             </select><br>
 
             <label><b>Fillière</b></label>
             <select name='filliereId' id='Filliere'>
-                " . include_once ('../Filieres/getAllForList.php') . "
+                " . xx . "
             </select><br>
             ";
             ?>
