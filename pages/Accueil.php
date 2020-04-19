@@ -19,12 +19,12 @@
 
 <form id="recherche" action="../Users/Search.php" method="get">
     <label>
-        <input id="inputRecherche" type="text" placeholder="Mot clé à rechercher" name="id">
+        <input id="inputRecherche" type="text" placeholder="Mot clé à rechercher" name="search">
     </label>
     <button id="btnRecherche" type="submit">Chercher</button>
     <button type="button" id="ajouter" onclick="Ajouter()">Ajouter</button>
-
 </form>
+
 <table id="utilisateurs">
     <tr>
         <th>ID</th>

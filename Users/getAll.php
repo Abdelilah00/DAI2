@@ -1,6 +1,12 @@
 <?php
 include_once "User.php";
-$users = User::getAll();
+
+if (isset($_GET['search']))
+    $users = User::getBy($_GET['search']);
+else
+    $users = User::getAll();
+
+
 foreach ($users as $user) {
     echo "<tr>
                 <td>" . $user['id'] . "</td>
