@@ -17,26 +17,25 @@
     <a id="deconnexion" href="../Users/SignOut.php">D&eacute;connexion</a>
 </div>
 
-<form id="recherche" action="../Users/Search.php" method="get">
+<form id="recherche" method="get">
     <label>
-        <input id="inputRecherche" type="text" placeholder="Mot clé à rechercher" name="id">
+        <input id="inputRecherche" type="text"
+               placeholder="Mot clé à rechercher"
+               name="search">
     </label>
     <button id="btnRecherche" type="submit">Chercher</button>
-
-
 </form>
-    <button type="button" id="ajouter" onclick="Ajouter()">Ajouter</button>
+<button type="button" id="ajouter" onclick="Ajouter()">Ajouter</button>
+
 <table id="utilisateurs">
-    <tr>
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Prenom</th>
-        <th>Descritpion</th>
-        <th>Filliere</th>
-        <th>Email</th>
-        <th>Téléphone</th>
-    </tr>
-    <?php include_once "../Users/getAll.php" ?>
+
+    <?php
+    include_once "../Users/getAll.php";
+    if (isset($_GET['search']))
+        get($_GET['search']);
+    else
+        get(null);
+    ?>
 </table>
 
 

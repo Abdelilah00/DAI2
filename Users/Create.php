@@ -29,9 +29,10 @@ if (isset($_POST['id']) && !empty($_POST['id'])
     $user->FiliereId = $filierId;
     $user->add();
 
+    $user = new User($user->Id);
     session_start();
     $_SESSION['userId'] = $user->Id;
-    $_SESSION['roleId'] = $user->DescriptionId;
+    $_SESSION['role'] = $user->DescriptionNom;
     header('location: ../pages/Accueil.php');
 } else {
     echo "error request parameters";

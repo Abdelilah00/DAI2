@@ -51,7 +51,7 @@ class User extends DB
         $conn = new DB();
         try {
             $elements = array();
-            $stmt = $conn->connect()->prepare("SELECT u.id, password, nom, prenom, numDeTele, email, descriptionid, filiereid, filiereNom, role from users u inner join descriptions d on u.DescriptionId = d.Id left join filieres f on u.FiliereId = f.Id");
+            $stmt = $conn->connect()->prepare("SELECT u.Id, Password, Nom, Prenom, NumDeTele, Email, Descriptionid, Filiereid, FiliereNom, Role from users u inner join descriptions d on u.DescriptionId = d.Id left join filieres f on u.FiliereId = f.Id");
             $stmt->execute();
 
             while ($element = $stmt->fetch()) {
@@ -66,12 +66,12 @@ class User extends DB
         }
     }
 
-    public static function getBy($search)
+    public static function getByEmailOrTele($search)
     {
         $conn = new DB();
         try {
             $elements = array();
-            $stmt = $conn->connect()->prepare("SELECT * from users where Nom=:search or Prenom=:search");
+            $stmt = $conn->connect()->prepare("SELECT u.Id, Password, Nom, Prenom, NumDeTele, Email, Descriptionid, Filiereid, FiliereNom, Role from users u inner join descriptions d on u.DescriptionId = d.Id left join filieres f on u.FiliereId = f.Id  where Email=:search or NumDeTele=:search");
             $stmt->execute(array(':search' => $search));
 
             while ($element = $stmt->fetch()) {
@@ -91,13 +91,13 @@ class User extends DB
         $conn = new DB();
         try {
             $elements = array();
-            $stmt = $conn->connect()->prepare("SELECT * from users where Email=:email");
+            $stmt = $conn->connect()->prepare("SELECT u.Id, Password, Nom, Prenom, NumDeTele, Email, Descriptionid, Filiereid, FiliereNom, Role from users u inner join descriptions d on u.DescriptionId = d.Id left join filieres f on u.FiliereId = f.Id where Email=:email");
             $stmt->execute(array(':email' => $email));
 
             while ($element = $stmt->fetch()) {
                 array_push($elements, $element);
             }
-            return $elements[0];
+            return $elements;
 
         } catch (PDOException $e) {
             echo "Error In Select: " . $e->getMessage();

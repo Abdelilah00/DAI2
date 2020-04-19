@@ -38,7 +38,7 @@
             <input id="id" type="text" placeholder="CNE ou RPP " name="id" required>
 
             <label for="email"> <b>Email</b></label>
-            <input id="email" type="text" placeholder="Veuillez saisir votre Email" name="email" required>
+            <input id="email" type="email" placeholder="Veuillez saisir votre Email" name="email" required>
 
             <label for="nom" ><b>Nom</b></label>
             <input id="nom"type="text" placeholder="Veuillez saisir votre nom" name="nom" required>
@@ -47,7 +47,8 @@
             <input id="prenom" type="text" placeholder="Veuillez saisir votre prenom" name="prenom" required>
 
             <label for="tlfn"><b>N° Téléphone</b></label>
-            <input id="tlfn"type="text" placeholder="Veuillez saisir votre numéro de téléphone" name="numDeTele" required>
+            <input id="tlfn" type="tel" placeholder="Veuillez saisir votre numéro de téléphone" name="numDeTele"
+                   required>
 
 
             <label for="profil"><b>Précisez votre profil</b></label>
