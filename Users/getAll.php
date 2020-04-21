@@ -54,8 +54,8 @@ function get($search)
         if ($columns[0]->visible == true) echo "<td>" . $user['Id'] . "</td>";
         if ($columns[1]->visible == true) echo "<td>" . $user['Nom'] . "</td>";
         if ($columns[2]->visible == true) echo "<td>" . $user['Prenom'] . "</td>";
-        if ($columns[3]->visible == true) echo "<td>" . $user['Role'] . "</td>";
-        if ($columns[4]->visible == true) echo "<td>" . $user['FiliereNom'] . "</td>";
+        if ($columns[3]->visible == true) echo "<td><input type='hidden' value='" . $user['DescriptionId'] . "'>" . $user['Role'] . "</td>";
+        if ($columns[4]->visible == true) echo "<td><input type='hidden' value='" . $user['FiliereId'] . "'>" . $user['FiliereNom'] . "</td>";
         if ($columns[5]->visible == true) echo "<td>" . $user['Email'] . "</td>";
         if ($columns[6]->visible == true) echo "<td>" . $user['NumDeTele'] . "</td>";
         echo "</tr>";

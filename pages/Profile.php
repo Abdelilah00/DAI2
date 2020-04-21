@@ -8,11 +8,7 @@
     <link rel="stylesheet" href="css/Navbar.css">
 </head>
 <body>
-<div class="topnav" id="myTopnav">
-    <a href="Accueil.php">Accueil</a>
-    <a class="active">Mon profile</a>
-    <a id="deconnexion">D&eacute;connexion</a>
-</div>
+<?php include_once('NavBar.php') ?>
 
 <div id="Profile" class="Panneau" style="display:block">
 
@@ -20,7 +16,6 @@
 
         <div class="sousConteneur">
             <?php include_once '../Users/User.php';
-            session_start();
             $user = new User($_SESSION['userId']);
 
             echo "<h1>Informations personnelles</h1>
@@ -69,35 +64,39 @@
 
         <div class="sousConteneur">
             <?php include_once '../Users/User.php';
+            include_once '../Descriptions/getAllForList.php';
+            include_once '../Filieres/getAllForList.php';
             $user = new User($_SESSION['userId']);
 
             echo "<label> <b>Identifiant</b></label>
-            <input type='text' placeholder='CNE ou RPP ' id='id' name='id' required>
+            <input type='text' placeholder='CNE ou RPP ' id='id' name='id' required value='" . $user->Id . "'>
 
             <label for='email'> <b>Email</b></label>
-            <input type='text' placeholder='Modifier Email' id='email' name='email' required>
+            <input type='text' placeholder='Modifier Email' id='email' name='email' required value='" . $user->Email . "'>
 
             <label for='nom'><b>Nom</b></label>
-            <input type='text' placeholder='Modifier nom' id='nom' name='nom' required>
+            <input type='text' placeholder='Modifier nom' id='nom' name='nom' required value='" . $user->Nom . "'>
 
             <label for='prenom'><b>Pr&eacute;nom</b></label>
-            <input type='text' placeholder='Modifier prenom' id='prenom' name='prenom' required>
+            <input type='text' placeholder='Modifier prenom' id='prenom' name='prenom' required value='" . $user->Prenom . "'>
 
             <label for='tlfn'><b>N° Téléphone</b></label>
-            <input type='text' placeholder='Modifier numéro de téléphone' id='tlfn' name='numdeTele' required>
+            <input type='text' placeholder='Modifier numéro de téléphone' id='tlfn' name='numDeTele' required value='" . $user->NumDeTele . "'>
 
 
             <label for='profil'><b>Profil</b></label>
-            <select name='descriptionId' id='profil' onchange='AfficherFilliere(this)'>
-                " . xx . "
-            </select><br>
+            <select name='descriptionId' id='profil' onchange='AfficherFilliere(this)'>";
 
+            getAllDesciptionsForList($user->DescriptionId);
+
+            echo "</select><br>
             <label for='Filliere'><b>Fillière</b></label>
-            <select name='filliereId' id='Filliere'>
-                " . xx . "
-            </select><br>
-            ";
-            ?>
+            <select name='filiereId' id='Filliere'>";
+
+            getAllFilieresForList($user->FiliereId);
+
+            echo "</select><br>"; ?>
+
             <button id="modifier" type="submit" style="margin-left:30%;">Valider</button>
 
         </div>

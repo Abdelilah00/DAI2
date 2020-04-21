@@ -14,7 +14,6 @@ if (isset($_POST['id']) && !empty($_POST['id'])
     if (User::exist($_POST['id']))
         header('location: errors=userExist');
 
-
     $user = new User($_POST['id']);
     $user->Password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $user->Nom = $_POST['nom'];

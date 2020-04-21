@@ -51,7 +51,7 @@ class User extends DB
         $conn = new DB();
         try {
             $elements = array();
-            $stmt = $conn->connect()->prepare("SELECT u.Id, Password, Nom, Prenom, NumDeTele, Email, Descriptionid, Filiereid, FiliereNom, Role from users u inner join descriptions d on u.DescriptionId = d.Id left join filieres f on u.FiliereId = f.Id");
+            $stmt = $conn->connect()->prepare("SELECT u.Id, Password, Nom, Prenom, NumDeTele, Email, DescriptionId, FiliereId, FiliereNom, Role from users u inner join descriptions d on u.DescriptionId = d.Id left join filieres f on u.FiliereId = f.Id");
             $stmt->execute();
 
             while ($element = $stmt->fetch()) {
@@ -71,7 +71,7 @@ class User extends DB
         $conn = new DB();
         try {
             $elements = array();
-            $stmt = $conn->connect()->prepare("SELECT u.Id, Password, Nom, Prenom, NumDeTele, Email, Descriptionid, Filiereid, FiliereNom, Role from users u inner join descriptions d on u.DescriptionId = d.Id left join filieres f on u.FiliereId = f.Id  where Email=:search or NumDeTele=:search");
+            $stmt = $conn->connect()->prepare("SELECT u.Id, Password, Nom, Prenom, NumDeTele, Email, DescriptionId, FiliereId, FiliereNom, Role from users u inner join descriptions d on u.DescriptionId = d.Id left join filieres f on u.FiliereId = f.Id  where Email=:search or NumDeTele=:search");
             $stmt->execute(array(':search' => $search));
 
             while ($element = $stmt->fetch()) {
@@ -91,7 +91,7 @@ class User extends DB
         $conn = new DB();
         try {
             $elements = array();
-            $stmt = $conn->connect()->prepare("SELECT u.Id, Password, Nom, Prenom, NumDeTele, Email, Descriptionid, Filiereid, FiliereNom, Role from users u inner join descriptions d on u.DescriptionId = d.Id left join filieres f on u.FiliereId = f.Id where Email=:email");
+            $stmt = $conn->connect()->prepare("SELECT u.Id, Password, Nom, Prenom, NumDeTele, Email, DescriptionId, FiliereId, FiliereNom, Role from users u inner join descriptions d on u.DescriptionId = d.Id left join filieres f on u.FiliereId = f.Id where Email=:email");
             $stmt->execute(array(':email' => $email));
 
             while ($element = $stmt->fetch()) {
@@ -172,8 +172,8 @@ class User extends DB
     public function update()
     {
         try {
-            $stmt = $this->connect()->prepare("update users set  where code = :code");
-            $stmt->execute(array(':code' => $this->code,));
+            $stmt = $this->connect()->prepare("update users set Id=:id,NumDeTele=:numDeTele,Email=:email,Nom=:nom,Prenom=:prenom,FiliereId=:filiereId,DescriptionId=:descriptionId where Id = :id");
+            $stmt->execute(array(':id' => $this->Id, ':numDeTele' => $this->NumDeTele, ':email' => $this->Email, ':nom' => $this->Nom, ':prenom' => $this->Prenom, ':filiereId' => $this->FiliereId, ':descriptionId' => $this->DescriptionId));
 
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();

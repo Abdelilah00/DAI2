@@ -40,8 +40,8 @@
             <label for="email"> <b>Email</b></label>
             <input id="email" type="email" placeholder="Veuillez saisir votre Email" name="email" required>
 
-            <label for="nom" ><b>Nom</b></label>
-            <input id="nom"type="text" placeholder="Veuillez saisir votre nom" name="nom" required>
+            <label for="nom"><b>Nom</b></label>
+            <input id="nom" type="text" placeholder="Veuillez saisir votre nom" name="nom" required>
 
             <label for="prenom"><b>Pr&eacute;nom</b></label>
             <input id="prenom" type="text" placeholder="Veuillez saisir votre prenom" name="prenom" required>
@@ -53,12 +53,14 @@
 
             <label for="profil"><b>Précisez votre profil</b></label>
             <select name="descriptionId" id="profil" onchange="AfficherFilliere(this)">
-                <?php include_once('../Descriptions/getAllForList.php') ?>
+                <?php include_once('../Descriptions/getAllForList.php');
+                getAllDesciptionsForList(null); ?>
             </select><br>
             <div id="FilliereDiv">
                 <label for="Filliere"><b>Fillière</b></label>
                 <select name="filiereId" id="Filliere">
-                    <?php include_once('../Filieres/getAllForList.php') ?>
+                    <?php include_once('../Filieres/getAllForList.php');
+                    getAllFilieresForList(null); ?>
                 </select>
             </div>
 

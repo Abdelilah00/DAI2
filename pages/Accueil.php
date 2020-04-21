@@ -10,12 +10,9 @@
     <script type="text/javascript" src="js/Login.js"></script>
     <script type="text/javascript" src="js/Accueil.js"></script>
 </head>
-<body onload="ajoutEvenementPourLignesDuTableau()">
-<div class="topnav" id="myTopnav">
-    <a class="active">Accueil</a>
-    <a href="Profile.php">Mon profile</a>
-    <a id="deconnexion" href="../Users/SignOut.php">D&eacute;connexion</a>
-</div>
+<body <?php if ($_SESSION['role'] == 'Admin') echo "onload='ajoutEvenementPourLignesDuTableau()'" ?>>
+
+<?php include_once('NavBar.php') ?>
 
 <form id="recherche" method="get">
     <label>
@@ -62,13 +59,15 @@
 
             <label for="profil"><b>Profil</b></label>
             <select name="descriptionId" id="profil" onchange="AfficherFilliere(this)">
-                <?php include_once('../Descriptions/getAllForList.php') ?>
+                <?php include_once('../Descriptions/getAllForList.php');
+                getAllDesciptionsForList(null); ?>
             </select><br>
 
             <div id="FilliereDiv">
                 <label for="Filliere"><b>Fillière</b></label>
                 <select name="filiereId" id="Filliere">
-                    <?php include_once('../Filieres/getAllForList.php') ?>
+                    <?php include_once('../Filieres/getAllForList.php');
+                    getAllFilieresForList(null); ?>
                 </select><br>
             </div>
 
