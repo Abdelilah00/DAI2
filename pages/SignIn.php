@@ -43,7 +43,7 @@ if (!empty($_SESSION['userId']))
 
             <button type="submit">Se connecter</button>
             <label>
-                <input checked="checked" name="remember" type="checkbox"> Se rappeler de moi
+                <input id="seRappeler" checked="checked" name="remember" type="checkbox"> Se rappeler de moi
             </label>
         </div>
 
