@@ -10,6 +10,7 @@ if (!empty($_SESSION['userId']))
     <title></title>
     <link href="css/Navbar.css" rel="stylesheet">
     <link href="css/SignIn.css" rel="stylesheet">
+    <script src="js/SignIn.js"></script>
 </head>
 
 <body>
@@ -41,7 +42,7 @@ if (!empty($_SESSION['userId']))
             <label for="mdp"><b>Mot de passe</b></label>
             <input id="mdp" name="password" placeholder="Veuillez sasir votre mot de passe" required type="password">
 
-            <button type="submit">Se connecter</button>
+            <button onclick="setCookies()">Se connecter</button>
             <label>
                 <input id="seRappeler" checked="checked" name="remember" type="checkbox"> Se rappeler de moi
             </label>
@@ -52,5 +53,8 @@ if (!empty($_SESSION['userId']))
         </div>
     </form>
 </div>
+<script>
+    getCookies();
+</script>
 </body>
 </html>

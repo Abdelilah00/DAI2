@@ -1,43 +1,40 @@
-function nouvelCookie(email,value,days) {
- var jours = 30;
- if (jours) {
-   var date = new Date();
-   date.setTime(date.getTime()+(days*24*60*60*1000));
-   var expires = "; s'expire le="+date.toGMTString(); }
-   else var expires = "";
-   document.cookie = name+"="+value+expires+"; path=/"; }
-
-function lireCookie(email) {
-   var emailSG = email + "=";
-   var nul = '';
-  if (document.cookie.indexOf(emailSG) == -1)
-    return nul;
-
-   var ca = document.cookie.split(';');
-  for(var i=0; i<ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0)==' ') c = c.substring(1,c.length);
-  if (c.indexOf(emailSG) == 0) return c.substring(emailSG.length,c.length); }
-    return null; }
-
-function supprimerCookie(email) {
-  nouvelCookie(email,"",-1); }
-
-function CreerCoockie(a) {
-  var e = document.getElementById('email');
-  var m = document.getElementById('mdp');
-  var cb = document.getElementById('seRappeler');
-
-  if(e.value.length != 0 && m.value.length != 0 && cb.checked==true ){
-    nouvelCookie('email', document.form.email.value);
-    nouvelCookie('email', document.form.mdp.value);
-  }
-
+function getCookies() {
+    document.getElementById('email').value = getCookie('email');
+    document.getElementById('mdp').value = getCookie('mdp');
 }
 
-function supprimerMemoire(a) {
-  supprimerCookie('email');
+function setCookies() {
 
+    let email = document.getElementById('email').value;
+    let mdp = document.getElementById('mdp').value;
+    let box = document.getElementById('seRappeler').checked;
+    if (box) {
+        setCookie('email', email, 30);
+        setCookie('mdp', mdp, 30);
+    }
+    document.getElementsByClassName('contenu').submit();
+}
 
-   document.form.email.value = '';
-   document.form.mdp.value = ''; }
+function setCookie(key, value, date) {
+    var d = new Date();
+    d.setTime(d.getTime() + (date * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = key + "=" + value + ";" + expires + ";path=/";
+    console.log(document.cookie);
+}
+
+function getCookie(key) {
+    var name = key + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
