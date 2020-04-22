@@ -1,5 +1,5 @@
 function AfficherFilliere(element) {
-    document.getElementById("Filliere").style.display = element.value == "Etudiant" ? 'block' : 'none';
+    document.getElementById("Filliere").style.display = element.value === "Etudiant" ? 'block' : 'none';
 }
 
 function resetFilliere() {
@@ -20,7 +20,7 @@ function mdpIdentiques(form) {
                     alert ("Veuillez confirmer votre mot de passe");
 
                 else if (mdp != cmdp) {
-                    alert ("\n Veuillez saisir des mots de passe identiques")
+                    alert("\n Veuillez saisir des mots de passe identiques");
                     return false;
                 }
 

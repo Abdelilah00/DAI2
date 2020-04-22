@@ -50,6 +50,7 @@ class User extends DB
     {
         $conn = new DB();
         try {
+
             $elements = array();
             $stmt = $conn->connect()->prepare("SELECT u.Id, Password, Nom, Prenom, NumDeTele, Email, DescriptionId, FiliereId, FiliereNom, Role from users u inner join descriptions d on u.DescriptionId = d.Id left join filieres f on u.FiliereId = f.Id");
             $stmt->execute();
@@ -57,6 +58,7 @@ class User extends DB
             while ($element = $stmt->fetch()) {
                 array_push($elements, $element);
             }
+
             return $elements;
 
         } catch (PDOException $e) {

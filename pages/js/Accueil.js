@@ -17,7 +17,7 @@ function ajoutEvenementPourLignesDuTableau() {
 function ModifierOuSuuprimer(row) {
 
     var p = document.getElementById('CRUD');
-    document.getElementById('id').value = row.getElementsByTagName("td")[0].innerHTML;
+    document.getElementById('xid').style.display = "none";
     document.getElementById('nom').value = row.getElementsByTagName("td")[1].innerHTML;
     document.getElementById('prenom').value = row.getElementsByTagName("td")[2].innerHTML;
     document.getElementById('profil').value = row.getElementsByTagName("td")[3].firstChild.value;
@@ -25,7 +25,7 @@ function ModifierOuSuuprimer(row) {
     document.getElementById('email').value = row.getElementsByTagName("td")[5].innerHTML;
     if (row.getElementsByTagName("td")[6] !== undefined) document.getElementById('tlfn').value = row.getElementsByTagName("td")[6].innerHTML;
 
-    document.getElementById('CAjout').style.display = "norow.getElementsByTagName(\"td\")[6]ne";
+    document.getElementById('CAjout').style.display = "none";
     document.getElementById('modifier').style.display = "inline-block";
     document.getElementById('supprimer').style.display = "inline-block";
 

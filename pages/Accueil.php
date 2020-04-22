@@ -22,7 +22,10 @@
     </label>
     <button id="btnRecherche" type="submit">Chercher</button>
 </form>
-<button type="button" id="ajouter" onclick="Ajouter()">Ajouter</button>
+
+<?php if ($_SESSION['role'] == 'Admin')
+    echo "<button type='button' id='ajouter' onclick='Ajouter()'>Ajouter</button>";
+?>
 
 <table id="utilisateurs">
 
@@ -41,8 +44,11 @@
     <form class="contenu " action="../Users/Edite.php" method="post">
 
         <div class="sousConteneur">
-            <label for="id"> <b>Identifiant</b></label>
-            <input type="text" placeholder="CNE ou RPP " id="id" name="id" required>
+            <div id="xid">
+                <label for="id"> <b>Identifiant</b></label>
+                <input type="text" placeholder="CNE ou RPP " id="id" name="id" required>
+            </div>
+
 
             <label for="email"> <b>Email</b></label>
             <input type="text" placeholder="Modifier Email" id="email" name="email" required>

@@ -1,6 +1,8 @@
 <div class="topnav" id="myTopnav">
     <a href="Accueil.php">Accueil</a>
-    <a href="Profile.php">Mon profile</a>
+    <?php if ($_SESSION['role'] != 'Admin')
+        echo "<a href='Profile.php'>Mon profile</a>";
+    ?>
     <a id="deconnexion" href="../Users/SignOut.php">D&eacute;connexion</a>
 </div>
 <script>
